@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.sahaeletronicsstore.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+        <item name="android:layout_margin">5sp</item>
+    </style>
+    <style name="Widget.sahaeletronicsstore.TextView.Heading" parent="Widget.sahaeletronicsstore.TextView">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Widget.sahaeletronicsstore.View.Divider" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:background">?attr/dividerHorizontal</item>
+    </style>
+</resources>

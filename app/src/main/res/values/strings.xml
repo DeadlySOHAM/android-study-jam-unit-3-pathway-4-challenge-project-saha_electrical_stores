@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Saha Electrical Stores</string>
+
+    <string name="desc">Image</string>
+
+    <string name="next">next</string>
+    <string name="cancel">@android:string/cancel</string>
+
+
+    <!--    company Fragment-->
+    <string name="tot_amt">Total Amount : Rs. %s</string>
+    <string name="wire_amt">Amount Per Wire : %.2f per meter</string>
+    <string name="quantity">Quantity : 1 (Default)</string>
+
+
+    <!--    wire color quantity -->
+    <string name="length">Length : 5m in meter</string>
+
+
+    <!--    summary -->
+    <string name="summary_product_name_heading">Product Name</string>
+    <string name="product_name">%s</string>
+
+    <string name="product_desc_heading">Product Details</string>
+    <string name="product_desc">Wattage : %.0f watts\nCompany : %s</string>
+    <string name="wire_product_desc">Color : %s\nDiameter : %.1f mm\nCompany : %s</string>
+
+    <string name="quantity_heading">Quantity</string>
+    <string name="quantity_value">%d</string>
+    <string name="wire_quantity_value">Length : %.2fm\nQuantity : %d</string>
+
+    <string name="tot_amt_summary">Total Amount inclusive of all taxes</string>
+    <string name="tot_amt_value">Rs. %s</string>
+
+
+    <!--  Delivery Details  -->
+    <string name="name_hint">Enter Name</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="adress_hint">Adress</string>
+    <string name="email_hint">Email</string>
+    <string name="home_delivery_switch_text">Home Delivery</string>
+    <string name="pincode_hint">6 digit Pincode</string>
+    <string name="nearest_landmark_hint">Nearest Landmark</string>
+
+</resources>

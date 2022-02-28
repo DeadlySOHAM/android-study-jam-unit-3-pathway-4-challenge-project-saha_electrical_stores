@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.Summary">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.sahaelectricalstores.fragmentViewModel.OrderViewModel" />
+        <variable
+            name="fragmentSummary"
+            type="com.example.sahaelectricalstores.fragments.Summary" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/summary_product_name_heading"
+                    style="@style/Widget.sahaeletronicsstore.TextView.Heading"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/product_name(viewModel.productName)}"
+                    style="@style/Widget.sahaeletronicsstore.TextView"
+                    />
+
+                <View
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.sahaeletronicsstore.View.Divider"
+                    />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.sahaeletronicsstore.TextView.Heading"
+                    android:text="@string/product_desc_heading"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.productId != 4 ? @string/product_desc(viewModel.watt,viewModel.company) : @string/wire_product_desc(viewModel.colorName,viewModel.watt,viewModel.company) }"
+                    style="@style/Widget.sahaeletronicsstore.TextView"
+                    />
+
+                <View
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.sahaeletronicsstore.View.Divider"
+                    />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/quantity_heading"
+                    style="@style/Widget.sahaeletronicsstore.TextView.Heading"
+                    />
+
+                <TextView
+                    style="@style/Widget.sahaeletronicsstore.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.productId != 4 ? @string/quantity_value(viewModel.quantity) : @string/wire_quantity_value(viewModel.length,viewModel.quantity) }" />
+
+                <View
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.sahaeletronicsstore.View.Divider"
+                    />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/tot_amt_summary"
+                    style="@style/Widget.sahaeletronicsstore.TextView.Heading"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/tot_amt_value(viewModel.price)}"
+                    style="@style/Widget.sahaeletronicsstore.TextView"
+                    />
+
+                <View
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.sahaeletronicsstore.View.Divider"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/next"
+                android:onClick="@{()->fragmentSummary.goToNext()}"
+                />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/cancel"
+                android:onClick="@{()->fragmentSummary.cancel()}"
+                style="?attr/materialButtonOutlinedStyle" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

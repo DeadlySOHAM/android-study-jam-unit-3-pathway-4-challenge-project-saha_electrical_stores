@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.sahaelectricalstores.fragmentViewModel.OrderViewModel" />
+        <variable
+            name="companyFragment"
+            type="com.example.sahaelectricalstores.fragments.Company" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/company_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/quantity_value_input_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/company_list_recycler_view_holder" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/quantity_value_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/quantity"
+                app:errorIconDrawable="@drawable/ic_error_icon"
+                app:layout_constraintBottom_toTopOf="@+id/total_amt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantity_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/total_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.sahaeletronicsstore.TextView"
+            android:text="@{viewModel.productId == 4 ? (viewModel.price > 1279999999.99 ? @string/wire_amt(0.0) : @string/wire_amt(viewModel.price)) : (viewModel.price > 1279999999.99 ? @string/tot_amt(0.0) : @string/tot_amt(viewModel.price)) }"
+            app:layout_constraintBottom_toTopOf="@+id/cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Total Amount" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/cancel"
+            android:onClick="@{()->companyFragment.cancel()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/next_button"
+            style="?attr/materialButtonOutlinedStyle"
+            />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/next"
+            android:onClick="@{()->companyFragment.goToNext()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

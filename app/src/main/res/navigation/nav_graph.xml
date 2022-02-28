@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/product">
+
+    <fragment
+        android:id="@+id/product"
+        android:name="com.example.sahaelectricalstores.fragments.Product"
+        android:label="Saha Electrical Stores"
+        tools:layout="@layout/fragment_product">
+        <action
+            android:id="@+id/action_product_to_wattage"
+            app:destination="@id/wattage" />
+    </fragment>
+    <fragment
+        android:id="@+id/wattage"
+        android:name="com.example.sahaelectricalstores.fragments.Wattage"
+        android:label="Wattage"
+        tools:layout="@layout/fragment_wattage">
+        <action
+            android:id="@+id/action_wattage_to_wire"
+            app:destination="@id/wire" />
+        <action
+            android:id="@+id/action_wattage_to_company"
+            app:destination="@id/company" />
+    </fragment>
+    <fragment
+        android:id="@+id/company"
+        android:name="com.example.sahaelectricalstores.fragments.Company"
+        android:label="Company"
+        tools:layout="@layout/fragment_company" >
+        <action
+
+            android:id="@+id/action_company_to_summary"
+            app:destination="@id/summary" />
+        <action
+            android:id="@+id/action_company_to_product"
+            app:destination="@id/product" />
+    </fragment>
+    <fragment
+        android:id="@+id/wire"
+        android:name="com.example.sahaelectricalstores.fragments.Wire"
+        android:label="Wire Details"
+        tools:layout="@layout/fragment_wire" >
+        <action
+            android:id="@+id/action_wire_to_wireColorQuantity"
+            app:destination="@id/wireColorQuantity" />
+        <action
+            android:id="@+id/action_wire_to_product"
+            app:destination="@id/product" />
+    </fragment>
+    <fragment
+        android:id="@+id/summary"
+        android:name="com.example.sahaelectricalstores.fragments.Summary"
+        android:label="Summary"
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summary_to_product"
+            app:destination="@id/product" />
+        <action
+            android:id="@+id/action_summary_to_deleviryDetails"
+            app:destination="@id/deleviryDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/wireColorQuantity"
+        android:name="com.example.sahaelectricalstores.fragments.WireColorQuantity"
+        android:label="Color , Quantity and Length"
+        tools:layout="@layout/fragment_wire_color_quantity">
+        <action
+            android:id="@+id/action_wireColorQuantity_to_summary"
+            app:destination="@id/summary" />
+        <action
+            android:id="@+id/action_wireColorQuantity_to_product"
+            app:destination="@id/product" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleviryDetails"
+        android:name="com.example.sahaelectricalstores.fragments.DeliveryDetails"
+        android:label="Delivery Details"
+        tools:layout="@layout/fragment_deleviry_details" >
+        <action
+            android:id="@+id/action_deleviryDetails_to_product"
+            app:destination="@id/product" />
+    </fragment>
+</navigation>
